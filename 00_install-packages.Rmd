@@ -1,0 +1,52 @@
+---
+title: "metabarcoding with dada2: environment installation"
+output: html_notebook
+---
+
+# update VM configuration
+``` {bash}
+sudo apt-get update -y 
+sudo apt-get install -y libbz2-dev
+sudo apt-get install -y liblzma-dev
+sudo apt-get install libglpk-dev
+```
+
+
+```{r}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+BiocManager::install(version = '3.11')
+BiocManager::install("dada2", version = "3.11")
+BiocManager::install("phyloseq", version = "3.11")
+```
+
+```{r}
+BiocManager::install("phangorn")
+```
+
+```{r}
+BiocManager::install("DECIPHER")
+```
+
+```{r}
+install.packages("gridExtra")
+```
+
+```{r}
+library(phyloseq)
+library(DECIPHER)
+library(phangorn)
+```
+
+```{r}
+BiocManager::install("DESeq2")
+```
+
+```{r}
+install.packages("usethis")
+```
+
+```{r}
+library(usethis)
+use_git_config(user.name = "Youssef-Raouf-1", user.email = "raouf.youssef18@gmail.com")
+```
